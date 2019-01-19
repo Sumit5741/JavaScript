@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="color:cadetblue">My First Game</h1>
+    <h3 style="color:cornflowerblue">Click on Submit to start the Game!!! </h3>
+    Score:<input type="button" name="button1" value="1000" id="field"/><br/><span id="span"></span>
+    <br/>Input <input type="text" id="field1" disabled onmouseover="fun()" onmouseout="fun2()"/>
+    <div id="id1"></div>
+    <input type="button" value="Submit" id="field2" onclick="calculate() , getElementById('field1').value=Math.floor(Math.random()*1000)"/>
+    <script>
+        // function fun()
+        // {
+        //     document.getElementById('id1').innerHTML="please cilck on Submit button";
+        //     // document.getElementById('field1').click=none;
+        // }
+        // function fun2()
+        // {
+        //     document.getElementById('id1').innerHTML="";
+        // }
+        // var score_val=Number(document.getElementById('field').value)
+        
+        function calculate()
+        {
+           var score_val=Number(document.getElementById('field1').value);
+        //    alert('hellooo')
+            if(document.getElementById('field1').value=="")
+            {
+                document.getElementById('span').innerHTML="****Game Started****";
+            }
+            var score_val = document.getElementById('field').value;
+            console.log(score_val);
+            if(score_val>=100) 
+            {
+            var inp=document.getElementById('field1').value;
+            if(inp%2===0 && inp>0)
+            {
+                var even_val=Number(document.getElementById('field').value)+200;
+                document.getElementById('field').value=even_val;
+                console.log(score_val);
+            }
+            else if(inp%2!==0)
+            {
+                var odd_val=Number(document.getElementById('field').value)-300;
+                document.getElementById('field').value=odd_val;
+                console.log(score_val);
+            }
+            }
+            else if(score_val>0 && score_val<=100)
+                {
+                    // var val1=document.getElementById('field1').value;
+                    document.getElementById('field')=0;
+                }
+            else
+            {
+                document.write('not enough points to proceed');
+            }
+            if(document.getElementById('field').value<100)
+            {
+                alert('Game Ended!!!!!')
+
+                document.getElementById('field').value="0";
+                document.getElementById('field1').value="";
+                document.getElementById('field2').style.visibility="hidden";
+            }
+        }
+    </script>
+</body>
+</html>
