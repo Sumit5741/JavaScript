@@ -1,0 +1,50 @@
+<!-- Program to print  all the Nevitonian name present in the array list-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <from>
+        <input type="button" value="Nevitonians" onclick="callFun()"/>
+    </from>
+    <script>
+        // arry of Objects
+        var employee=[
+                {name:"Vinit",empid:87,company:"Neviton"},
+                {name:"Sumit",empid:89,company:"Neviton"},
+                {name:"Anil",empid:41,company:"Arey"},
+                {name:"Nithesh",empid:51,company:"Neviton"},
+                {name:"Sameer",empid:10,company:"Uthunga"},
+                {name:"Abhishek",empid:01,company:"TCS"}];
+
+        // function to print the name        
+        var printName=function(obj)
+        {
+            if(obj.empid>50)
+            {
+                console.log(`${obj.name} is a ${obj.company} employee`);
+            }
+        } 
+        function callFun()
+        {
+            employeeIdentity(employee,printName);
+        }
+                
+        var employeeIdentity=function(employeeObjects,callback)
+        {
+            for(var i=0;i<employeeObjects.length;i++)
+            {
+                if(employeeObjects[i].company=="Neviton")
+                {
+                    if(typeof callback==="function")
+                    {
+                    callback(employeeObjects[i]);
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create_Dynamic_TextBox</title>
+</head>
+<body>
+    <form>
+        Name1 :<input type="text" id="id1"/>
+        <input type="button" value="Add" onclick="CreateTextbox();"/>
+        <!-- <input type="button" id="button" value="Change_Background" onclick="Change_Bg();"/> -->
+        <div id="Empty_Space"></div>
+    </form>
+    <script>
+    var i=1;
+    // function Change_Bg()
+    // {
+    //     console.log('Helllooo!!!!')
+    //     background(0);
+    //     button.mousePress(Change_Background);
+    //     function Change_Background()
+    //     {
+    //         background(random(255));
+    //     }
+    // }
+    function CreateTextbox() 
+    {
+        var a = document.getElementById("Empty_Space");
+        var array=[];
+        var inp = document.createElement('input');
+        inp.type = 'text';
+        inp.name = 'textfield';
+        inp.labels='Name :'
+        inp.setAttribute(`id`,`id${i+1}`);
+        a.appendChild(inp);
+        var br=document.createElement("br");
+        a.appendChild(br);
+        inp.focus();
+        for(var x=1;x<=i;x++)
+        {
+            if(x===1)
+            {
+                var first1=document.getElementById("id1").value;
+                array.push(`Name1:${first1}`);    
+            }
+            else if(x>1)
+            {
+            var name=document.getElementById(`id${x}`).value;
+            array.push(`Name${x} :${name}`);
+            }
+        }
+        console.log(array);
+        i++;
+    }
+    </script>
+</body>
+</html>

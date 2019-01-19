@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inheritance Example</title>
+</head>
+  <body>
+  <script>
+    class Animal 
+    {
+      constructor(name) 
+      {
+        this.time = 0;
+        this.name = name;
+      }
+      sleeps(time) 
+      {
+        this.time += time;
+        alert(`${this.name} sleeps for ${this.time} hour.`);
+      }
+      roars()
+      {
+        alert(`${this.name} roars very high.`);
+      }
+    }
+    class Tiger extends Animal {
+        eats()
+            {
+                alert(`${this.name} eats Meat!`);
+            }
+    }
+
+
+    // Example for the function inheritence
+
+
+    let tiger = new Tiger("Bengal Tigers");
+    tiger.sleeps(10);
+    tiger.eats();
+    tiger.roars();
+    let birds={ 
+          flies:true
+      };
+    function Eagle(name)
+        {
+            this.name=name;
+        } 
+        Eagle.prototype=birds;
+        let eagle=new Eagle();
+        alert(eagle.flies);
+
+
+    // Example for Object Inheritence
+
+        let sparrow = {
+          eats: true
+        };
+
+        sparrow.__proto__ = birds;
+        
+        alert(sparrow.flies); 
+        alert(sparrow.eats); 
+  </script>
+</body>
+</html>

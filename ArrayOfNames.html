@@ -1,0 +1,44 @@
+<html>
+<head>
+<title>Dynamic Form Creation</title>
+</head>
+<body>
+<form>
+Name1 :<input type="text" id="text1">
+<input type="button" value="Add" onclick="fun()">
+    <div id="id1"></div>
+    <!-- <div id='id2'></div>
+    <div id='id3'></div>
+    <div id='id4'></div>
+    <div id='id5'></div>
+    <div id='id6'></div> -->
+    
+    <script>
+        var i=1;
+        function fun()
+        {    
+            
+            var inp = document.createElement('input');
+            inp.setAttribute("id", 'curr');
+            inp.type = 'text';
+        id1.innerHTML=id1.innerHTML+`<br\>Name${i+1}: <input type='text' id='text${i+1}' >`
+        var arr=[];
+
+        for(j=1;j<=i;j++)
+        {
+           // var a=`id${j}`;
+            // var x=`text${j}`;
+            // alert('HELLOOOO!!!')
+            // console.log(document.getElementById(`text${j}`).value);
+            console.log(document.getElementById(`text${j}`));
+            var data=document.getElementById(`text${j}`).value;
+            arr.push(`name${j} :`+data);
+            // console.log(document.getElementById(`text${j}`).value);
+        }
+        console.log(arr);
+        
+        i++;
+        }
+    </script>
+</body>
+</html>

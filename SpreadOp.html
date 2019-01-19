@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Spread Operator</title>
+</head>
+<body>
+    <h1>Program to merge two array into third array using different method</h1>
+    <script>
+
+        // merging two arrays into third array
+        
+        var array1=[1,2,3,4,5];
+        var array2=[6,7,8,9,10];
+        var array3=array1.concat(array2);//using concate function
+        console.log(array3);
+        console.log([...array1,...array2]);//using spread operator 
+        
+
+        // // merging two array using Filter into third array
+        
+        var arr1=[1,2,3,4,5];
+        var arr2=[6,2,4,7,8,2,9,10,11,4,5];
+        var arr3 = arr1.concat(arr2);
+        // console.log(arr3.indexOf(6));
+        var arr4 = arr3.filter(function (item, pos) 
+        {
+            return arr3.indexOf(item) == pos;
+        });
+        console.log(arr4);
+
+        // Merging two array into third array using set function
+        
+        // var arr1=[10,20,30,40,50];
+        // var arr2=[60,20,40,70,80,90,100,110,40,50];
+        // var arra3 = [...new Set([...arr1, ...arr2])];
+        // console.log(arra3);
+    </script>    
+</body>
+</html>
